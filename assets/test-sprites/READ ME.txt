@@ -1,0 +1,34 @@
+
+Hi, thanks for downloading my asset pack. 
+	-- Turturi
+
+-----
+
+Asset pack based on sprites I made for a jam game "Just 3 Minutes".
+
+This asset pack features:
+	4 characters with walking and idle animations
+	conveyor belt animated tileset
+	supports for conveyor belt tileset
+	floor and wall tileset
+	4 machines you can put on the conveyor belt
+	12 boxes with 4 inventory open sprites
+	3 lockers with 3 inventory open sprites
+	6 tool sprites with mini versions
+
+The characters are 16x16, but not everything else is (still, these sprites do work well together). The tools and boxes have different dimensions, and the factory line is 21x21. Every sprite sheet and tileset has its dimensions written in their name.
+
+
+------
+
+Licence
+Credit is required (for example, with link: https://turturi.itch.io, or with name”Turturi”).
+
+You can:
+edit the assets
+use it for non-commercial and commercial projects, such as games, digital toys, applications, videos etc.
+
+You can't:
+resell or redistribute as standalone assets or asset pack, even if modified
+use it to train AI
+use it in NFT's, crypto, gambling etc. related projects

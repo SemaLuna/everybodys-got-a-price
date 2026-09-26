@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://26y05ms0sofe"]
+
+[ext_resource type="Texture2D" uid="uid://bemveqdmvn3vp" path="res://assets/test-sprites/tilesets/conveyor belt 21x21.png" id="1_ktqbe"]
+[ext_resource type="Script" uid="uid://qweoudcexqg3" path="res://scripts/item_holder.gd" id="2_13kty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfegk"]
+size = Vector2(20, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13kty"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(21, 231, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfoi7"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(42, 231, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k415x"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(63, 231, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cu08"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(84, 231, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opeix"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(105, 231, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfee4"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(126, 231, 21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dfegk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13kty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfoi7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k415x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cu08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opeix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfee4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1sgd"]
+size = Vector2(10, 5)
+
+[node name="Conveyor" type="Area2D" unique_id=1667239738]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2124130477]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_dfegk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=867960614]
+sprite_frames = SubResource("SpriteFrames_dfegk")
+autoplay = "default"
+
+[node name="Detector" type="Area2D" parent="." unique_id=283288603]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=665681187]
+shape = SubResource("RectangleShape2D_o1sgd")
+
+[node name="ItemHolder" type="Node2D" parent="." unique_id=858761960]
+script = ExtResource("2_13kty")

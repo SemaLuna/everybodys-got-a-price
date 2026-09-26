@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://vdl48k7220cp"]
+
+[ext_resource type="Script" uid="uid://vftbbr5lsx6" path="res://scripts/producer.gd" id="1_ypp4w"]
+[ext_resource type="Texture2D" uid="uid://cwgrpnxhckpes" path="res://assets/test-sprites/lockers/locker1.png" id="2_e1gqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfegk"]
+
+[node name="Producer" type="Node2D" unique_id=89407394]
+script = ExtResource("1_ypp4w")
+
+[node name="Timer" type="Timer" parent="." unique_id=820899096]
+one_shot = true
+autostart = true
+
+[node name="Detector" type="Area2D" parent="." unique_id=1508884299]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=1728350175]
+position = Vector2(21, 0)
+shape = SubResource("RectangleShape2D_dfegk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=95578809]
+texture = ExtResource("2_e1gqi")
