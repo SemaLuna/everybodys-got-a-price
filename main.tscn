@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dlbtyk26gjp58" path="res://ui/hud.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://csd31gpptv3ct" path="res://ui/main_menu.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dl632clw4jg3t" path="res://ui/pause_menu.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://2ok7dwr13r6m" path="res://scene/planning.tscn" id="5_lquwl"]
 
 [node name="Main" type="Node" unique_id=554738231]
 script = ExtResource("1_0xm2m")
@@ -17,6 +18,12 @@ visible = false
 visible = false
 
 [node name="Timer" type="Timer" parent="." unique_id=2009036978]
+
+[node name="Planning" parent="." unique_id=222239368 instance=ExtResource("5_lquwl")]
+position = Vector2(269, 237)
+
+[node name="Planning2" parent="." unique_id=1522243669 instance=ExtResource("5_lquwl")]
+position = Vector2(267, 291)
 
 [connection signal="pause_game" from="HUD" to="." method="handle_pause"]
 [connection signal="start_game" from="MainMenu" to="." method="start_game"]
