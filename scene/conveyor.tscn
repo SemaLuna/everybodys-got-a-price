@@ -61,18 +61,23 @@ animations = [{
 [node name="Conveyor" type="Area2D" unique_id=1667239738]
 monitoring = false
 script = ExtResource("1_k415x")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2124130477]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_dfegk")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=867960614]
 sprite_frames = SubResource("SpriteFrames_dfegk")
 autoplay = "default"
+metadata/_edit_group_ = true
 
 [node name="Detector" parent="." unique_id=873267539 instance=ExtResource("3_k415x")]
+metadata/_edit_group_ = true
 
 [node name="ItemHolder" parent="." unique_id=1173343974 instance=ExtResource("4_2cu08")]
+metadata/_edit_group_ = true
 
 [connection signal="belt_detected" from="Detector" to="." method="_on_detector_belt_detected"]
 [connection signal="item_ready" from="ItemHolder" to="." method="_on_item_holder_item_ready"]

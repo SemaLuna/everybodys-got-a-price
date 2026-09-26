@@ -403,6 +403,7 @@ position = Vector2(20, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1175320286]
 z_index = 2
+rotation = 3.1415927
 sprite_frames = SubResource("SpriteFrames_dfegk")
 autoplay = "default"
 frame = 1
