@@ -2,20 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dx3au2yrvk16q" path="res://ui/pause_menu.gd" id="1_50142"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_50142"]
-device = -1
-keycode = 80
-unicode = 112
-
-[sub_resource type="InputEventKey" id="InputEventKey_ejwgg"]
-device = -1
-keycode = 4194305
-
-[sub_resource type="Shortcut" id="Shortcut_1bvp3"]
-events = [SubResource("InputEventKey_50142"), SubResource("InputEventKey_ejwgg")]
-
 [node name="Pause Menu" type="CanvasLayer" unique_id=494341896]
 script = ExtResource("1_50142")
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=505031581]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
 
 [node name="Resume" type="Button" parent="." unique_id=1847300925]
 anchors_preset = 8
@@ -31,7 +27,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-shortcut = SubResource("Shortcut_1bvp3")
 text = "Resume"
 
 [node name="Quit" type="Button" parent="." unique_id=991340138]

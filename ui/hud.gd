@@ -12,3 +12,6 @@ func _process(delta: float) -> void:
 
 func _on_pause_button_pressed() -> void:
 	pause_game.emit()
+
+func update_score_banner(score) -> void:
+	$ScoreBanner/PriceSoldValue.text = "[i]" + str(score) + "[/i]"

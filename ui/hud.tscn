@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlbtyk26gjp58"]
 
 [ext_resource type="Script" uid="uid://dkgbty0u6w72g" path="res://ui/hud.gd" id="1_rbyyf"]
+[ext_resource type="PackedScene" uid="uid://bhq5pm2dft4l3" path="res://ui/hud/score_banner.tscn" id="2_276te"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_rbyyf"]
 device = -1
@@ -18,15 +19,14 @@ events = [SubResource("InputEventKey_rbyyf"), SubResource("InputEventKey_276te")
 script = ExtResource("1_rbyyf")
 
 [node name="PauseButton" type="Button" parent="." unique_id=991340138]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -96.0
+offset_right = 96.0
 offset_bottom = 31.0
-grow_horizontal = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 shortcut = SubResource("Shortcut_rbyyf")
+shortcut_feedback = false
 text = "Pause"
+
+[node name="ScoreBanner" parent="." unique_id=827953839 instance=ExtResource("2_276te")]
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

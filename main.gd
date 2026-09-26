@@ -4,18 +4,30 @@ extends Node
 var uiItems = []
 var is_game_paused = false
 var is_game_started = false
+var price_units_sold = 0
 
 func _ready() -> void:
 	uiItems = [$MainMenu, $PauseMenu, $HUD]
 	reset_game_state()
+	
+	# TODO remove, just for testing
+	$Timer.start()
+
+# TODO remove
+func _on_timer_timeout() -> void:
+	if (is_game_started && !is_game_paused):
+		price_units_sold += 1
 
 func _process(delta: float) -> void:
-	pass
+	if (is_game_started):
+		$HUD.update_score_banner(price_units_sold)
+	
 
 func reset_game_state() -> void:
 	# TODO Start background title music
 	is_game_started = false
 	is_game_paused = false
+	price_units_sold = 0
 	show_ui($MainMenu)
 	var menu = $MainMenu
 	menu.custom_function()
@@ -35,18 +47,17 @@ func handle_pause() -> void:
 	
 func pause_game() -> void:
 	# TODO make sure all the other logic pauses (e.g. timers)
-	show_ui($PauseMenu)
+	$PauseMenu.show()
 
 func unpause_game() -> void:
 	# TODO make sure all other logic restarts (e.g. timers) when unpausing
-	show_ui($HUD)
+	$PauseMenu.hide()
 
 func quit_game() -> void:
 	reset_game_state()
 	
 # Hides every other uiItem - use carefully, if you want to display multiple UI scenes at once
 func show_ui(UiSceneToShow) -> void:
-	print(UiSceneToShow)
 	for item in uiItems:
 		if is_same(UiSceneToShow, item):
 			item.show()
