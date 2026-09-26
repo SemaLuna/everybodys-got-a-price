@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://26y05ms0sofe"]
 
+[ext_resource type="Script" uid="uid://sv80ibw8wgju" path="res://scripts/conveyor.gd" id="1_k415x"]
 [ext_resource type="Texture2D" uid="uid://bemveqdmvn3vp" path="res://assets/test-sprites/tilesets/conveyor belt 21x21.png" id="1_ktqbe"]
-[ext_resource type="Script" uid="uid://qweoudcexqg3" path="res://scripts/item_holder.gd" id="2_13kty"]
+[ext_resource type="PackedScene" uid="uid://b32ruvfb4h0uh" path="res://scene/detector.tscn" id="3_k415x"]
+[ext_resource type="PackedScene" uid="uid://b1m0vyis5bi4n" path="res://scene/item_holder.tscn" id="4_2cu08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfegk"]
 size = Vector2(20, 11)
@@ -56,10 +58,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1sgd"]
-size = Vector2(10, 5)
-
 [node name="Conveyor" type="Area2D" unique_id=1667239738]
+monitoring = false
+script = ExtResource("1_k415x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2124130477]
 position = Vector2(0, 1.5)
@@ -69,10 +70,9 @@ shape = SubResource("RectangleShape2D_dfegk")
 sprite_frames = SubResource("SpriteFrames_dfegk")
 autoplay = "default"
 
-[node name="Detector" type="Area2D" parent="." unique_id=283288603]
+[node name="Detector" parent="." unique_id=873267539 instance=ExtResource("3_k415x")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=665681187]
-shape = SubResource("RectangleShape2D_o1sgd")
+[node name="ItemHolder" parent="." unique_id=1173343974 instance=ExtResource("4_2cu08")]
 
-[node name="ItemHolder" type="Node2D" parent="." unique_id=858761960]
-script = ExtResource("2_13kty")
+[connection signal="belt_detected" from="Detector" to="." method="_on_detector_belt_detected"]
+[connection signal="item_ready" from="ItemHolder" to="." method="_on_item_holder_item_ready"]

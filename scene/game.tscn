@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://2ok7dwr13r6m"]
 
 [ext_resource type="PackedScene" uid="uid://26y05ms0sofe" path="res://scene/conveyor.tscn" id="1_5kiuu"]
-[ext_resource type="PackedScene" uid="uid://bfmlsm3rk6363" path="res://scene/trash-box.tscn" id="2_dbls1"]
+[ext_resource type="PackedScene" uid="uid://bfmlsm3rk6363" path="res://scene/trash.tscn" id="2_dbls1"]
+[ext_resource type="PackedScene" uid="uid://vdl48k7220cp" path="res://scene/producer.tscn" id="3_33cqm"]
 
 [node name="Game" type="Node2D" unique_id=222239368]
 
@@ -18,5 +19,8 @@ position = Vector2(21, 0)
 [node name="Conveyor3" parent="Conveyors" unique_id=1909036483 instance=ExtResource("1_5kiuu")]
 position = Vector2(41, 0)
 
-[node name="TrashBox" parent="." unique_id=697490232 instance=ExtResource("2_dbls1")]
+[node name="Producer" parent="." unique_id=89407394 instance=ExtResource("3_33cqm")]
+position = Vector2(-20, 0)
+
+[node name="Trash" parent="." unique_id=697490232 instance=ExtResource("2_dbls1")]
 position = Vector2(74, 0)

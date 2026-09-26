@@ -1,11 +1,15 @@
 extends Node2D
+@onready var box_path = load("res://scene/box.tscn")
+@onready var detector = $Detector
+@onready var timer = $Timer
+@onready var item_holder = $ItemHolder
 
+func _on_detector_belt_detected(destination: Node2D):
+	var item = box_path.instantiate()
+	item_holder.add_child(item)
+	destination.receive_item(item)
+	timer.start()
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_timer_timeout():
+	detector.detect()
+	

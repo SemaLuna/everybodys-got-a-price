@@ -14,7 +14,7 @@ func receive_item(item: Node2D):
 	item.reparent(self, true)
 	moving_item = true
 	
-	## Called when a conveyor belt can recieve another item.
+	## Called when a conveyor belt can receive another item.
 func offload_item():
 	var item = get_child(0)
 	return item
@@ -24,7 +24,7 @@ func _physics_process(delta):
 	if not moving_item or get_child_count() == 0:
 		return
 	var item = get_child(0)
-	if item is Node2D: ## Is this necessary?
+	if item is Node2D: ## Potentially required for the usage of global_position 
 		## Moves items to the edge of conveyor belt
 		item.global_position = item.global_position.move_toward(get_parent().global_position,
 				 speed * delta)

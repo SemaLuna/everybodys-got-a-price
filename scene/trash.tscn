@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bfmlsm3rk6363"]
+
+[ext_resource type="Texture2D" uid="uid://4kag7xdcaqr4" path="res://assets/test-sprites/boxes/open box_big wooden.png" id="1_bnwpc"]
+[ext_resource type="Script" uid="uid://djw2ijum7x6fi" path="res://scripts/trash.gd" id="1_tmcpm"]
+[ext_resource type="PackedScene" uid="uid://b1m0vyis5bi4n" path="res://scene/item_holder.tscn" id="3_dltdn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfegk"]
+size = Vector2(44, 44)
+
+[node name="TrashBox" type="Area2D" unique_id=1505681771]
+script = ExtResource("1_tmcpm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185593731]
+shape = SubResource("RectangleShape2D_dfegk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=929262745]
+texture = ExtResource("1_bnwpc")
+
+[node name="ItemHolder" parent="." unique_id=1173343974 instance=ExtResource("3_dltdn")]
+
+[connection signal="item_ready" from="ItemHolder" to="." method="_on_item_holder_item_ready"]
