@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://j3evx1ojf0qh"]
+
+[ext_resource type="Script" uid="uid://c3xcovgjyrhhs" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dlbtyk26gjp58" path="res://ui/hud.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://csd31gpptv3ct" path="res://ui/main_menu.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dl632clw4jg3t" path="res://ui/pause_menu.tscn" id="4_1bvp3"]
+
+[node name="Main" type="Node" unique_id=554738231]
+script = ExtResource("1_0xm2m")
+
+[node name="HUD" parent="." unique_id=494341896 instance=ExtResource("2_1bvp3")]
+
+[node name="MainMenu" parent="." unique_id=797490252 instance=ExtResource("2_h2yge")]
+visible = false
+
+[node name="PauseMenu" parent="." unique_id=1083180113 instance=ExtResource("4_1bvp3")]
+visible = false
+
+[connection signal="pause_game" from="HUD" to="." method="handle_pause"]
+[connection signal="start_game" from="MainMenu" to="." method="start_game"]
+[connection signal="quit_game" from="PauseMenu" to="." method="quit_game"]
+[connection signal="resume_game" from="PauseMenu" to="." method="handle_pause"]
