@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dlbtyk26gjp58"]
+
+[ext_resource type="Script" uid="uid://dkgbty0u6w72g" path="res://ui/hud.gd" id="1_rbyyf"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_rbyyf"]
+device = -1
+keycode = 80
+unicode = 112
+
+[sub_resource type="InputEventKey" id="InputEventKey_276te"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_rbyyf"]
+events = [SubResource("InputEventKey_rbyyf"), SubResource("InputEventKey_276te")]
+
+[node name="HUD" type="CanvasLayer" unique_id=494341896]
+script = ExtResource("1_rbyyf")
+
+[node name="PauseButton" type="Button" parent="." unique_id=991340138]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_bottom = 31.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+shortcut = SubResource("Shortcut_rbyyf")
+text = "Pause"
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
