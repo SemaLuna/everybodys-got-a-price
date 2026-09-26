@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bfmlsm3rk6363"]
+
+[ext_resource type="Texture2D" uid="uid://4kag7xdcaqr4" path="res://assets/test-sprites/boxes/open box_big wooden.png" id="1_bnwpc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfegk"]
+size = Vector2(44, 44)
+
+[node name="TrashBox" type="Node2D" unique_id=697490232]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1847895160]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=185593731]
+shape = SubResource("RectangleShape2D_dfegk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=929262745]
+texture = ExtResource("1_bnwpc")
