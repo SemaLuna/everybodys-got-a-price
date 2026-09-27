@@ -1,6 +1,7 @@
 extends Node2D
 
 var moving_item = false
+var game_paused = false
 @export var speed = 30
 signal item_ready
 
@@ -21,8 +22,7 @@ func offload_item():
 	
 func _physics_process(delta):
 	## No items on the conveyor or an item is at the end of the conveyor waiting to be offloaded
-	if not moving_item or get_child_count() == 0:
-		return
+	if not moving_item or get_child_count() == 0 or game_paused : return
 	var item = get_child(0)
 	if item is Node2D: ## Potentially required for the usage of global_position 
 		## Moves items to the edge of conveyor belt

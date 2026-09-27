@@ -4,26 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://vdl48k7220cp" path="res://scene/producer.tscn" id="2_phd41"]
 [ext_resource type="PackedScene" uid="uid://bfmlsm3rk6363" path="res://scene/trash.tscn" id="3_2xhhf"]
 [ext_resource type="PackedScene" uid="uid://5ds8r0upd1id" path="res://grid_cell.tscn" id="4_phd41"]
+[ext_resource type="PackedScene" uid="uid://26y05ms0sofe" path="res://scene/conveyor.tscn" id="5_r32hj"]
 
 [node name="PlanningPhase" type="Node2D" unique_id=222239368]
 script = ExtResource("1_r32hj")
 grid_cell = ExtResource("4_phd41")
 producer = ExtResource("2_phd41")
 trash = ExtResource("3_2xhhf")
+belt = ExtResource("5_r32hj")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=535380836]
 propagate_maximum_size = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = 192.0
 offset_top = 128.0
 offset_right = 1088.0
 offset_bottom = 576.0
-grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/h_separation = 0

@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://b6w5q81m7puut"]
+[gd_scene format=3 uid="uid://d0ufue7b0l7b6"]
 
 [ext_resource type="PackedScene" uid="uid://26y05ms0sofe" path="res://scene/conveyor.tscn" id="1_w2ni8"]
 [ext_resource type="PackedScene" uid="uid://vdl48k7220cp" path="res://scene/producer.tscn" id="2_phd41"]
 [ext_resource type="PackedScene" uid="uid://bfmlsm3rk6363" path="res://scene/trash.tscn" id="3_2xhhf"]
 
-[node name="Planning" type="Node2D" unique_id=222239368]
+[node name="Planning" type="Node2D" unique_id=222239368 groups=["Conveyors"]]
 
 [node name="Producer" parent="." unique_id=89407394 instance=ExtResource("2_phd41")]
 position = Vector2(-32, -32)

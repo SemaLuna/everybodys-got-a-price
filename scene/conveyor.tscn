@@ -67,7 +67,7 @@ position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_dfegk")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=867960614]
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=867960614 groups=["Animations"]]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_dfegk")
 autoplay = "default"

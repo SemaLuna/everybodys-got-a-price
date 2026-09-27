@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dlbtyk26gjp58" path="res://ui/hud.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://csd31gpptv3ct" path="res://ui/main_menu.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dl632clw4jg3t" path="res://ui/pause_menu.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://1rqykgp6sc74" path="res://end_score.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://2ok7dwr13r6m" path="res://scene/planning_phase.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://26y05ms0sofe" path="res://scene/conveyor.tscn" id="6_7mycd"]
 
@@ -22,6 +23,9 @@ script = ExtResource("1_0xm2m")
 visible = false
 
 [node name="PauseMenu" parent="." unique_id=1083180113 instance=ExtResource("4_1bvp3")]
+visible = false
+
+[node name="EndScore" parent="." unique_id=491036651 instance=ExtResource("5_272bh")]
 visible = false
 
 [node name="Timer" type="Timer" parent="." unique_id=2009036978]

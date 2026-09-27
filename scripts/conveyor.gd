@@ -30,4 +30,10 @@ func _on_detector_belt_detected(destination: Area2D):
 ## checks to see viable conveyor belts to pass item to
 func _on_item_holder_item_ready():
 	detector.detect()
+
+func play():
+	$ItemHolder.game_paused = false
+	
+func pause():
+	$ItemHolder.game_paused = true
 	

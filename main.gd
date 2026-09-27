@@ -14,6 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (is_game_started):
 		$HUD.update_score_banner(price_units_sold)
+		$EndScore.update_final_score(price_units_sold)
 
 func on_increase_score():
 	price_units_sold += 1
@@ -35,7 +36,7 @@ func start_game() -> void:
 	$PlanningPhase.show()
 	
 func handle_pause() -> void:
-	if (!is_game_started): pass
+	if (!is_game_started): return
 	
 	is_game_paused = !is_game_paused
 	if (is_game_paused):
@@ -46,14 +47,19 @@ func handle_pause() -> void:
 func pause_game() -> void:
 	# TODO make sure all the other logic pauses (e.g. timers)
 	$PauseMenu.show()
-	$PlanningPhase.stop_animation()
+	get_tree().call_group("Animations", "stop")
+	get_tree().call_group("Conveyors", "pause")
 
 func unpause_game() -> void:
 	# TODO make sure all other logic restarts (e.g. timers) when unpausing
 	$PauseMenu.hide()
-	$PlanningPhase.start_animation()
+	get_tree().call_group("Animations", "play")
+	get_tree().call_group("Conveyors", "play")
 
 func quit_game() -> void:
+	$EndScore.show()
+	await get_tree().create_timer(5.0).timeout
+	$EndScore.hide()
 	reset_game_state()
 	
 # Hides every other uiItem - use carefully, if you want to display multiple UI scenes at once
