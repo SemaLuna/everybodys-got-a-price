@@ -10,7 +10,7 @@ enum Direction {Left, Right, Up, Down}
 func set_direction():
 	## Requires thorough implementation for now it will simple receive from left deposit right
 	## the default detector position is centered on the conveyor, we will need to point it towards the next conveyor
-	detector.position = Vector2.RIGHT * 20 
+	detector.position = Vector2.RIGHT * 64 
 	
 # Sets the direction for the conveyor at the very start
 func _ready():

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b1m0vyis5bi4n" path="res://scene/item_holder.tscn" id="3_dltdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfegk"]
-size = Vector2(44, 44)
+size = Vector2(88, 88)
 
 [node name="TrashBox" type="Area2D" unique_id=1505681771]
 script = ExtResource("1_tmcpm")
@@ -14,6 +14,7 @@ script = ExtResource("1_tmcpm")
 shape = SubResource("RectangleShape2D_dfegk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=929262745]
+scale = Vector2(2, 2)
 texture = ExtResource("1_bnwpc")
 
 [node name="ItemHolder" parent="." unique_id=1173343974 instance=ExtResource("3_dltdn")]

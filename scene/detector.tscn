@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cdgf6cpl1qi0d" path="res://scripts/detector.gd" id="1_04gh1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1sgd"]
-size = Vector2(10, 5)
+size = Vector2(12, 8)
 
 [node name="Detector" type="Area2D" unique_id=873267539]
 monitorable = false

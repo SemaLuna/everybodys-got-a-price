@@ -7,15 +7,16 @@
 [node name="Planning" type="Node2D" unique_id=222239368]
 
 [node name="Producer" parent="." unique_id=89407394 instance=ExtResource("2_phd41")]
-position = Vector2(-20, 0)
+position = Vector2(-32, -32)
 
 [node name="Trash" parent="." unique_id=697490232 instance=ExtResource("3_2xhhf")]
-position = Vector2(74, 0)
+position = Vector2(232, -32)
 
 [node name="Conveyor" parent="." unique_id=1667239738 instance=ExtResource("1_w2ni8")]
+position = Vector2(32, -32)
 
 [node name="Conveyor2" parent="." unique_id=1646736851 instance=ExtResource("1_w2ni8")]
-position = Vector2(21, 0)
+position = Vector2(96, -32)
 
 [node name="Conveyor3" parent="." unique_id=1909036483 instance=ExtResource("1_w2ni8")]
-position = Vector2(41, 0)
+position = Vector2(160, -32)
