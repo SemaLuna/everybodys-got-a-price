@@ -63,6 +63,7 @@ func on_cell_pressed(cell: BaseButton) -> void:
 	if building_scene != null:
 		var machine_instance = building_scene.instantiate()
 		cell.add_child(machine_instance)
+		get_parent().get_node("SFXPlayer").play_sfx("SFX - Place.ogg")
 		if direction != null:
 			if direction == "turn-right":
 				machine_instance.set_direction(direction)
