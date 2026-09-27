@@ -3,7 +3,7 @@ extends AudioStreamPlayer
 var sounds: Dictionary[String, AudioStream]
 
 func _ready() -> void:
-	var path = "res://assets/audio/sfx"
+	var path = "res://assets/audio/sfx/"
 	var dir = DirAccess.open(path)
 	if dir:
 		dir.list_dir_begin()
@@ -15,7 +15,7 @@ func _ready() -> void:
 	else:
 		print("An error occurred when trying to access the path.")
 		
-	var path2 = "res://assets/audio/sfx/price"
+	var path2 = "res://assets/audio/sfx/price/"
 	var dir2 = DirAccess.open(path2)
 	if dir2:
 		dir2.list_dir_begin()
@@ -23,14 +23,13 @@ func _ready() -> void:
 		while file_name != "":
 			if !file_name.begins_with("."):
 				sounds[file_name] = load(path2 + file_name)
-				print(file_name)
 			file_name = dir2.get_next()
 	else:
 		print("An error occurred when trying to access the path.")
 
 # Called when the node enters the scene tree for the first time.
-func play_sfx(name):
-	stream = sounds.name
+func play_sfx(name: String):
+	stream = sounds[name]
 	play()
 	
 	

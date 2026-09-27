@@ -16,52 +16,62 @@ func update_countdown_display(timeleft):
 	$Countdown.text = str(int(round(timeleft)))
 
 func _on_pause_button_pressed() -> void:
+	get_parent().get_node("SFXPlayer").play_sfx("SFX - UICancel.ogg")
 	pause_game.emit()
 
 func update_score_banner(score) -> void:
 	$ScoreBanner/PriceSoldValue.text = "[i]" + str(score) + "[/i]"
+	#get_parent().get_node("SFXPlayer").play_sfx("SFX - UISelect.ogg")
 
 func _on_trash_button_toggled(toggled_on: bool) -> void:
 	for button in buttons:
 		(button as BaseButton).set_toggle_mode(false)
 	$TrashButton.set_toggle_mode(true)
 	build_mode.emit(toggled_on, null)
+	get_parent().get_node("SFXPlayer").play_sfx("SFX - UICancel.ogg")
 
 func _on_conveyor_button_pressed() -> void:
 	update_build_state($ConveyorButton)
 	var scene = conveyor_scene if is_building else null
 	build_mode.emit(is_building, scene, null)
+	get_parent().get_node("SFXPlayer").play_sfx("SFX - UIMove.ogg")
 	
 func _on_conveyor_turn_right_button_pressed() -> void:
 	update_build_state($ConveyorTurnRightButton)
 	var scene = conveyor_scene if is_building else null
 	var turn = "turn-right"
 	build_mode.emit(is_building, scene, turn)
+	get_parent().get_node("SFXPlayer").play_sfx("SFX - UIMove.ogg")
 	
 func _on_conveyor_turn_left_button_pressed() -> void:
 	update_build_state($ConveyorTurnLeftButton)
 	var scene = conveyor_scene if is_building else null
 	var turn = "turn-left"
 	build_mode.emit(is_building, scene, turn)
+	get_parent().get_node("SFXPlayer").play_sfx("SFX - UIMove.ogg")
 
 func _on_trash_button_pressed() -> void:
 	update_build_state($TrashButton)
 	build_mode.emit(is_building, null, null)
+	get_parent().get_node("SFXPlayer").play_sfx("SFX - UIMove.ogg")
 	
 func _on_stretch_machine_button_pressed() -> void:
 	update_build_state($StretchMachineButton)
 	var scene = stretch_machine_scene if is_building else null
 	build_mode.emit(is_building, scene, null)
+	get_parent().get_node("SFXPlayer").play_sfx("SFX - UIMove.ogg")
 	
 func _on_stretch_machine_red_button_pressed() -> void:
 	update_build_state($StretchMachineRedButton)
 	var scene = stretch_machine_red_scene if is_building else null
 	build_mode.emit(is_building, scene, null)
+	get_parent().get_node("SFXPlayer").play_sfx("SFX - UIMove.ogg")
 	
 func _on_stretch_machine_yellow_button_pressed() -> void:
 	update_build_state($StretchMachineYellowButton)
 	var scene = stretch_machine_yellow_scene if is_building else null
 	build_mode.emit(is_building, scene, null)
+	get_parent().get_node("SFXPlayer").play_sfx("SFX - UIMove.ogg")
 
 func update_build_state(button: BaseButton) -> void:
 	var currently_active_button = button.is_toggle_mode()
