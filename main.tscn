@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dl632clw4jg3t" path="res://ui/pause_menu.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://1rqykgp6sc74" path="res://ui/end_score.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://2ok7dwr13r6m" path="res://ui/planning_phase.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dwh8uamg8w6wb" path="res://music_player.tscn" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://ukv6ioqx43xl" path="res://sfx_player.gd" id="8_kek77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
 texture = ExtResource("2_7mycd")
@@ -126,6 +128,14 @@ one_shot = true
 
 [node name="PlanningPhase" parent="." unique_id=222239368 instance=ExtResource("5_lquwl")]
 
+[node name="MusicPlayer" parent="." unique_id=1763511428 instance=ExtResource("7_5vw27")]
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=47636862]
+max_polyphony = 8
+script = ExtResource("8_kek77")
+
+[connection signal="intro" from="." to="MusicPlayer" method="to_intro"]
+[connection signal="title" from="." to="MusicPlayer" method="to_title"]
 [connection signal="build_mode" from="HUD" to="PlanningPhase" method="build_mode"]
 [connection signal="pause_game" from="HUD" to="." method="handle_pause"]
 [connection signal="rotation_updated" from="HUD" to="PlanningPhase" method="_on_hud_rotation_updated"]
