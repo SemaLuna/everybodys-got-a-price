@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c7s6jw1fqkfbw"]
+
+[ext_resource type="Script" uid="uid://s8uaog6vt07c" path="res://shrub_test_scene.gd" id="1_eomc2"]
+[ext_resource type="PackedScene" uid="uid://dwh8uamg8w6wb" path="res://music_player.tscn" id="2_4rmjw"]
+
+[node name="Shrub Test Scene" type="Node2D" unique_id=1353489699]
+script = ExtResource("1_eomc2")
+
+[node name="MusicPlayer" parent="." unique_id=1763511428 instance=ExtResource("2_4rmjw")]
+
+[connection signal="action" from="." to="MusicPlayer" method="to_action"]
+[connection signal="intro" from="." to="MusicPlayer" method="to_intro"]
+[connection signal="lose" from="." to="MusicPlayer" method="to_lose"]
+[connection signal="plan" from="." to="MusicPlayer" method="to_planning"]
+[connection signal="title" from="." to="MusicPlayer" method="to_title"]
+[connection signal="win" from="." to="MusicPlayer" method="to_win"]
