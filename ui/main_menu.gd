@@ -1,17 +1,19 @@
 extends CanvasLayer
 
+@onready var animatedIntro = $AnimatedSprite2D
+@onready var startButton = $StartGame
+@onready var timer = $Timer
 signal start_game
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-func custom_function() -> void:
-	pass
 
 func _on_start_game_pressed() -> void:
 	start_game.emit()
+
+func _on_timer_timeout() -> void:
+	startButton.visible = true
+	startButton.disabled = false
+	
+func reset_main_menu():
+	startButton.visible = false
+	startButton.disabled = true
+	animatedIntro.play("default")
+	timer.start()
