@@ -26,11 +26,8 @@ visible = false
 
 [node name="Timer" type="Timer" parent="." unique_id=2009036978]
 
-[node name="Planning" parent="." unique_id=222239368 instance=ExtResource("5_lquwl")]
+[node name="PlanningPhase" parent="." unique_id=222239368 instance=ExtResource("5_lquwl")]
 position = Vector2(320, 192)
-
-[node name="Planning2" parent="." unique_id=1522243669 instance=ExtResource("5_lquwl")]
-position = Vector2(320, 320)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=559005502]
 position = Vector2(40, -520)

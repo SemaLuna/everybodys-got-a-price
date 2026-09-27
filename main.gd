@@ -9,19 +9,15 @@ var price_units_sold = 0
 func _ready() -> void:
 	uiItems = [$MainMenu, $PauseMenu, $HUD]
 	reset_game_state()
-	
-	# TODO remove, just for testing
-	$Timer.start()
-
-# TODO remove
-func _on_timer_timeout() -> void:
-	if (is_game_started && !is_game_paused):
-		price_units_sold += 1
+	$PlanningPhase/Trash.connect("increase_score", on_increase_score)
 
 func _process(delta: float) -> void:
 	if (is_game_started):
 		$HUD.update_score_banner(price_units_sold)
-	
+
+func on_increase_score():
+	price_units_sold += 1
+	$HUD.update_score_banner(price_units_sold)
 
 func reset_game_state() -> void:
 	# TODO Start background title music
