@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 	if (is_game_started):
 		$HUD.update_score_banner(price_units_sold)
 		$HUD.update_countdown_display($Countdown.time_left)
+		$EndScore.update_final_score(price_units_sold)
 
 func on_increase_score():
 	price_units_sold += 1
@@ -64,6 +65,9 @@ func unpause_game() -> void:
 	$Countdown.set_paused(false)
 
 func quit_game() -> void:
+	$EndScore.show()
+	await get_tree().create_timer(5.0).timeout
+	$EndScore.hide()
 	reset_game_state()
 	
 # Hides every other uiItem - use carefully, if you want to display multiple UI scenes at once
