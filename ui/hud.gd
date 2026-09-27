@@ -12,6 +12,9 @@ signal rotation_updated
 var is_building = false
 var build_rotation = 0
 
+func update_countdown_display(timeleft):
+	$Countdown.text = str(int(round(timeleft)))
+
 func _on_pause_button_pressed() -> void:
 	pause_game.emit()
 
