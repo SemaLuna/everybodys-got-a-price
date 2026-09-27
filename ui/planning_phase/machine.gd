@@ -8,7 +8,7 @@ var move_vector: Vector2 = Vector2(64.0, 0.0) # Move fully across the machine
 # Overridden from parent
 func receive_item(item: Node2D):
 	super(item)
-	var animation = get_parent().find_child('Animation') as AnimatedSprite2D
+	var animation = get_parent().find_child('AnimatedSprite2D') as AnimatedSprite2D
 	animation.play('processing')
 	item.hide()
 	
