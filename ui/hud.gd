@@ -4,6 +4,7 @@ signal pause_game
 signal build_mode
 
 @export var conveyor_scene : PackedScene
+@export var stretch_machine_scene : PackedScene
 @onready var buttons = [$ConveyorButton, $TrashButton]
 var is_building = false
 
@@ -27,6 +28,11 @@ func _on_conveyor_button_pressed() -> void:
 func _on_trash_button_pressed() -> void:
 	update_build_state($TrashButton)
 	build_mode.emit(is_building, null)
+	
+func _on_stretch_machine_button_pressed() -> void:
+	update_build_state($StretchMachineButton)
+	var scene = stretch_machine_scene if is_building else null
+	build_mode.emit(is_building, scene)
 
 func update_build_state(button: BaseButton) -> void:
 	var currently_active_button = button.is_toggle_mode()

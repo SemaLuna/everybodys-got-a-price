@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dwgq13gfwm61m"]
+
+[ext_resource type="Texture2D" uid="uid://dhb3wgu6l4u7o" path="res://assets/custom/machines/Price_sitting_3.png" id="1_a5try"]
+
+[node name="Box" type="Sprite2D" unique_id=107487743]
+z_index = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_a5try")

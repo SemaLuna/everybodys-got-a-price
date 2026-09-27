@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dkgbty0u6w72g" path="res://ui/hud.gd" id="1_rbyyf"]
 [ext_resource type="PackedScene" uid="uid://bhq5pm2dft4l3" path="res://ui/hud/score_banner.tscn" id="2_276te"]
-[ext_resource type="PackedScene" uid="uid://26y05ms0sofe" path="res://scene/conveyor.tscn" id="4_1v5rv"]
+[ext_resource type="PackedScene" uid="uid://bvqw8ewota4c6" path="res://ui/planning_phase/stretch_machine.tscn" id="3_srpbi"]
+[ext_resource type="PackedScene" uid="uid://26y05ms0sofe" path="res://ui/planning_phase/conveyor.tscn" id="4_1v5rv"]
 [ext_resource type="Texture2D" uid="uid://88dad6iwyttb" path="res://assets/Free Industrial Zone Tileset/1 Tiles/atlas.png" id="4_7ihmi"]
 [ext_resource type="PackedScene" uid="uid://s4uewsnnvfcm" path="res://ui/hud/conveyor_button.tscn" id="4_en2x2"]
 [ext_resource type="PackedScene" uid="uid://37py3jvht7of" path="res://ui/hud/trash_button.tscn" id="6_1v5rv"]
+[ext_resource type="PackedScene" uid="uid://c4mpxdgsntrus" path="res://ui/hud/stretch_machine_button.tscn" id="7_q43x7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_en2x2"]
 texture = ExtResource("4_7ihmi")
@@ -112,6 +114,7 @@ events = [SubResource("InputEventKey_rbyyf"), SubResource("InputEventKey_276te")
 [node name="HUD" type="CanvasLayer" unique_id=494341896]
 script = ExtResource("1_rbyyf")
 conveyor_scene = ExtResource("4_1v5rv")
+stretch_machine_scene = ExtResource("3_srpbi")
 
 [node name="HUDOverlay" type="TileMapLayer" parent="." unique_id=870736874]
 position = Vector2(258, 256)
@@ -147,6 +150,13 @@ offset_top = 608.0
 offset_right = 1168.0
 offset_bottom = 672.0
 
+[node name="StretchMachineButton" parent="." unique_id=1452956942 instance=ExtResource("7_q43x7")]
+offset_left = 192.0
+offset_top = 608.0
+offset_right = 256.0
+offset_bottom = 672.0
+
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="ConveyorButton" to="." method="_on_conveyor_button_pressed"]
 [connection signal="pressed" from="TrashButton" to="." method="_on_trash_button_pressed"]
+[connection signal="pressed" from="StretchMachineButton" to="." method="_on_stretch_machine_button_pressed"]
