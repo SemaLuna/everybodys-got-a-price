@@ -6,7 +6,9 @@ signal rotation_updated
 
 @export var conveyor_scene : PackedScene
 @export var stretch_machine_scene : PackedScene
-@onready var buttons = [$ConveyorButton, $TrashButton, $StretchMachineButton, $ConveyorTurnRightButton, $ConveyorTurnLeftButton, $Rotate90Button]
+@export var stretch_machine_red_scene : PackedScene
+@export var stretch_machine_yellow_scene : PackedScene
+@onready var buttons = [$ConveyorButton, $TrashButton, $StretchMachineButton, $StretchMachineRedButton, $StretchMachineYellowButton, $ConveyorTurnRightButton, $ConveyorTurnLeftButton, $Rotate90Button]
 var is_building = false
 var build_rotation = 0
 
@@ -46,6 +48,16 @@ func _on_trash_button_pressed() -> void:
 func _on_stretch_machine_button_pressed() -> void:
 	update_build_state($StretchMachineButton)
 	var scene = stretch_machine_scene if is_building else null
+	build_mode.emit(is_building, scene, null)
+	
+func _on_stretch_machine_red_button_pressed() -> void:
+	update_build_state($StretchMachineRedButton)
+	var scene = stretch_machine_red_scene if is_building else null
+	build_mode.emit(is_building, scene, null)
+	
+func _on_stretch_machine_yellow_button_pressed() -> void:
+	update_build_state($StretchMachineYellowButton)
+	var scene = stretch_machine_yellow_scene if is_building else null
 	build_mode.emit(is_building, scene, null)
 
 func update_build_state(button: BaseButton) -> void:
