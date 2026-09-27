@@ -25,9 +25,10 @@ func reset_game_state() -> void:
 	is_game_paused = false
 	price_units_sold = 0
 	show_ui($MainMenu)
+	
 	$PlanningPhase.hide()
 	var menu = $MainMenu
-	menu.custom_function()
+	menu.reset_main_menu()
 
 func start_game() -> void:
 	is_game_started = true
