@@ -265,7 +265,7 @@ script = ExtResource("1_5ynl3")
 shape = SubResource("RectangleShape2D_dfegk")
 metadata/_edit_group_ = true
 
-[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=867960614 groups=["Animations"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=867960614 groups=["Animations"]]
 sprite_frames = SubResource("SpriteFrames_dfegk")
 animation = &"processing"
 autoplay = "idle"
@@ -278,6 +278,6 @@ metadata/_edit_group_ = true
 script = ExtResource("6_hmplx")
 metadata/_edit_group_ = true
 
-[connection signal="animation_finished" from="Animation" to="ItemHolder" method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="ItemHolder" method="_on_animation_animation_finished"]
 [connection signal="belt_detected" from="Detector" to="." method="_on_detector_belt_detected"]
 [connection signal="item_ready" from="ItemHolder" to="." method="_on_item_holder_item_ready"]
