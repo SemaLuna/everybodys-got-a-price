@@ -28,10 +28,7 @@ func reset_game_state() -> void:
 	
 	$PlanningPhase.hide()
 	var menu = $MainMenu
-<<<<<<< HEAD
 	menu.reset_main_menu()
-=======
->>>>>>> a0c6b3f (rotation)
 
 func start_game() -> void:
 	is_game_started = true
