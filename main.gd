@@ -46,12 +46,12 @@ func handle_pause() -> void:
 func pause_game() -> void:
 	# TODO make sure all the other logic pauses (e.g. timers)
 	$PauseMenu.show()
-	$PlanningPhase.stop_animation()
+	get_tree().call_group("Animations", "stop")
 
 func unpause_game() -> void:
 	# TODO make sure all other logic restarts (e.g. timers) when unpausing
 	$PauseMenu.hide()
-	$PlanningPhase.start_animation()
+	get_tree().call_group("Animations", "play")
 
 func quit_game() -> void:
 	reset_game_state()
