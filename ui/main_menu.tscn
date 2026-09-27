@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1pni7k8o6pt" path="res://ui/main_menu.gd" id="1_t7e0r"]
 [ext_resource type="Texture2D" uid="uid://m4cslk476ehv" path="res://assets/custom/screens/spritesheet.png" id="2_0dkrt"]
+[ext_resource type="Texture2D" uid="uid://caa7jfq1und71" path="res://assets/custom/icons/start.png" id="3_wk0pr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wk0pr"]
 atlas = ExtResource("2_0dkrt")
@@ -298,6 +299,9 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wk0pr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="InputEventKey" id="InputEventKey_t7e0r"]
 device = -1
 keycode = 4194309
@@ -314,24 +318,23 @@ sprite_frames = SubResource("SpriteFrames_o1sgd")
 autoplay = "default"
 
 [node name="StartGame" type="Button" parent="." unique_id=991340138]
-visible = false
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.72700006
 anchor_right = 0.5
 anchor_bottom = 0.72700006
-offset_left = -48.0
-offset_top = -15.808044
-offset_right = 48.0
-offset_bottom = 15.191956
+offset_left = -78.5
+offset_top = -78.308044
+offset_right = 78.5
+offset_bottom = 77.691956
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wk0pr")
 disabled = true
 shortcut = SubResource("Shortcut_eeh60")
-text = "Start Game
-"
+icon = ExtResource("3_wk0pr")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]

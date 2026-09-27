@@ -69,5 +69,5 @@ func _on_rotate_90_button_pressed() -> void:
 	build_rotation += PI/2
 	rotation_updated.emit(build_rotation)
 	for button in buttons:
-		if (button != $Rotate90Button):
+		if (button != $Rotate90Button) && (button != $TrashButton):
 			button.rotation = build_rotation
