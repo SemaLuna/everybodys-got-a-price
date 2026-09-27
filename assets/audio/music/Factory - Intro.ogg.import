@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Factory - Intro.ogg-ee3cf38b93f3b15162b9a7f68
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0.0
 bpm=96.0
 beat_count=0
