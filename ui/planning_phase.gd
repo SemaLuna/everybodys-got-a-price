@@ -7,10 +7,12 @@ var halfCell = Vector2(32,32)
 
 var MAX_COLUMNS = 14
 var ROWS = 7 #Not configured directly, but expected based on container size
+var LAST_CELL_INDEX = (MAX_COLUMNS * ROWS) - 1
 var producerInstance = null
 var trashInstance = null
 var building_scene: PackedScene
 var direction = null
+var build_rotation = 0
 
 func _ready() -> void:
 	populate_grid()
@@ -19,6 +21,9 @@ func build_mode(is_active: bool, building, turn) -> void:
 	building_scene = building if is_active else null
 	direction = turn
 	toggle_cells(is_active)
+
+func _on_hud_rotation_updated(rotation):
+	build_rotation = rotation
 
 func populate_grid() -> void:
 	var container = $GridContainer
@@ -34,7 +39,7 @@ func populate_grid() -> void:
 			producerInstance = producer.instantiate()
 			new_cell.add_child(producerInstance)
 			producerInstance.translate(halfCell)
-		else: if (i == (MAX_COLUMNS - 1)):
+		else: if (i == LAST_CELL_INDEX):
 			trashInstance = trash.instantiate()
 			new_cell.add_child(trashInstance)
 			trashInstance.translate(halfCell)
@@ -44,7 +49,7 @@ func toggle_cells(is_enabled: bool) -> void:
 	var cells = $GridContainer.get_children()
 	for i in cells.size():
 		# Enable every button in the cell except the initial ones
-		if (i != 0) && (i != (MAX_COLUMNS - 1)):
+		if (i != 0) && (i != LAST_CELL_INDEX):
 			cells[i].disabled = !is_enabled
 		
 func on_cell_pressed(cell: BaseButton) -> void:
@@ -63,5 +68,5 @@ func on_cell_pressed(cell: BaseButton) -> void:
 				machine_instance.set_direction(direction)
 			if direction == "turn-left":
 				machine_instance.set_direction(direction)
+		machine_instance.rotation = build_rotation
 		machine_instance.translate(halfCell)
-		

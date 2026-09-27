@@ -2,11 +2,13 @@ extends CanvasLayer
 
 signal pause_game
 signal build_mode
+signal rotation_updated
 
 @export var conveyor_scene : PackedScene
 @export var stretch_machine_scene : PackedScene
-@onready var buttons = [$ConveyorButton, $TrashButton, $StretchMachineButton, $ConveyorTurnRightButton, $ConveyorTurnLeftButton]
+@onready var buttons = [$ConveyorButton, $TrashButton, $StretchMachineButton, $ConveyorTurnRightButton, $ConveyorTurnLeftButton, $Rotate90Button]
 var is_building = false
+var build_rotation = 0
 
 func _on_pause_button_pressed() -> void:
 	pause_game.emit()
@@ -62,3 +64,10 @@ func update_build_state(button: BaseButton) -> void:
 	# Update current button state
 	button.set_toggle_mode(is_building)
 	button.set_pressed(is_building)
+
+func _on_rotate_90_button_pressed() -> void:
+	build_rotation += PI/2
+	rotation_updated.emit(build_rotation)
+	for button in buttons:
+		if (button != $Rotate90Button):
+			button.rotation = build_rotation
