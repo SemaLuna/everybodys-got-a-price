@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var animatedIntro = $AnimatedSprite2D
 @onready var startButton = $StartGame
-@onready var timer = $Timer
 signal start_game
 
 func _on_start_game_pressed() -> void:
