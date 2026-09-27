@@ -53,6 +53,7 @@ animations = [{
 }]
 
 [node name="ConveyorTurnRightButton" type="Button" unique_id=1638303112]
+pivot_offset = Vector2(32, 32)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=355431299 groups=["Animations"]]
 position = Vector2(32, 32)
