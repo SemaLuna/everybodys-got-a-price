@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b4vx3nq77t7e0" path="res://assets/audio/music/Factory - Win.ogg" id="5_tsj6b"]
 [ext_resource type="AudioStream" uid="uid://dabccmypw8ewi" path="res://assets/audio/music/Factory - Lose.ogg" id="6_1i1ll"]
 [ext_resource type="Script" uid="uid://d255oldefpqg4" path="res://music_player.gd" id="7_ebnul"]
-[ext_resource type="AudioStream" uid="uid://d0icnucxscyri" path="res://assets/audio/sfx/SFX - Buy.ogg" id="7_vnyht"]
+[ext_resource type="AudioStream" uid="uid://c5v4scitkkr1v" path="res://assets/audio/sfx/price/SFX - Happy 1.wav" id="7_vnyht"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_o5jr7"]
 stream_count = 1
@@ -57,16 +57,18 @@ Vector2i(0, 1): {
 "to_time": 1,
 "use_filler_clip": true
 },
-Vector2i(1, 2): {
-"fade_beats": 2.0,
+Vector2i(0, 3): {
+"fade_beats": 0.8,
 "fade_mode": 4,
-"from_time": 2,
-"to_time": 1
+"filler_clip": 6,
+"from_time": 1,
+"to_time": 1,
+"use_filler_clip": true
 },
 Vector2i(1, 3): {
 "fade_beats": 1.0,
 "fade_mode": 4,
-"from_time": 0,
+"from_time": 3,
 "to_time": 1
 },
 Vector2i(2, 3): {
