@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1m0vyis5bi4n" path="res://scene/item_holder.tscn" id="4_2cu08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfegk"]
-size = Vector2(20, 11)
+size = Vector2(42, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13kty"]
 atlas = ExtResource("1_ktqbe")
@@ -61,20 +61,19 @@ animations = [{
 [node name="Conveyor" type="Area2D" unique_id=1667239738]
 monitoring = false
 script = ExtResource("1_k415x")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2124130477]
-position = Vector2(0, 1.5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_dfegk")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=867960614]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_dfegk")
 autoplay = "default"
 metadata/_edit_group_ = true
 
 [node name="Detector" parent="." unique_id=873267539 instance=ExtResource("3_k415x")]
-metadata/_edit_group_ = true
 
 [node name="ItemHolder" parent="." unique_id=1173343974 instance=ExtResource("4_2cu08")]
 metadata/_edit_group_ = true

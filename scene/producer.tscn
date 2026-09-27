@@ -399,15 +399,17 @@ one_shot = true
 autostart = true
 
 [node name="Detector" parent="." unique_id=873267539 instance=ExtResource("2_ius02")]
-position = Vector2(20, 0)
+position = Vector2(60.6, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1175320286]
 z_index = 2
-rotation = 3.1415927
+rotation = 6.2831855
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_dfegk")
 autoplay = "default"
 frame = 1
 frame_progress = 0.2332139
+flip_h = true
 
 [node name="ItemHolder" parent="." unique_id=1173343974 instance=ExtResource("4_ius02")]
 
