@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://1rqykgp6sc74"]
+
+[ext_resource type="Script" uid="uid://u12tq4bvmiy2" path="res://ui/end_score.gd" id="1_suvn8"]
+[ext_resource type="Texture2D" uid="uid://m4cslk476ehv" path="res://assets/custom/screens/spritesheet.png" id="2_kg0nl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gxll"]
+atlas = ExtResource("2_kg0nl")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rxlq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gxll")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EndScore" type="CanvasLayer" unique_id=750610893]
+script = ExtResource("1_suvn8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1369913224]
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_3rxlq")
+
+[node name="FinalScoreLabel" type="RichTextLabel" parent="." unique_id=1258738460]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -104.0
+offset_right = 128.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "OH NO THE GAME IS OVER!
+
+[b]Your final score is...[/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalScoreValue" type="RichTextLabel" parent="." unique_id=19078592]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 88.0
+offset_right = 128.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+theme_override_font_sizes/bold_italics_font_size = 48
+theme_override_font_sizes/italics_font_size = 48
+theme_override_font_sizes/mono_font_size = 48
+bbcode_enabled = true
+text = "TBD"
+horizontal_alignment = 1
+vertical_alignment = 1

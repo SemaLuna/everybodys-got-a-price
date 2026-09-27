@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://88dad6iwyttb" path="res://assets/free-industrial-tileset/1-tiles/atlas.png" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://csd31gpptv3ct" path="res://ui/main_menu.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dl632clw4jg3t" path="res://ui/pause_menu.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://1rqykgp6sc74" path="res://ui/end_score.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://2ok7dwr13r6m" path="res://ui/planning_phase.tscn" id="5_lquwl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
@@ -112,6 +113,9 @@ visible = false
 visible = false
 
 [node name="PauseMenu" parent="." unique_id=1083180113 instance=ExtResource("4_1bvp3")]
+visible = false
+
+[node name="EndScore" parent="." unique_id=491036651 instance=ExtResource("5_272bh")]
 visible = false
 
 [node name="Timer" type="Timer" parent="." unique_id=2009036978]
