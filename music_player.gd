@@ -2,7 +2,8 @@ extends AudioStreamPlayer
 
 func to_title():
 	var playback = get_stream_playback() as AudioStreamPlaybackInteractive
-	playback.switch_to_clip_by_name("Title")
+	if playback.get_current_clip_index() != 0:
+		playback.switch_to_clip_by_name("Title")
 	
 func to_intro():
 	var playback = get_stream_playback() as AudioStreamPlaybackInteractive
