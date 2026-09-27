@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dwh8uamg8w6wb"]
+
+[ext_resource type="AudioStream" uid="uid://dcjvnh7m5vw87" path="res://assets/audio/music/Factory - Title.ogg" id="1_nqnhx"]
+[ext_resource type="AudioStream" uid="uid://bkakwv605swjf" path="res://assets/audio/music/Factory - Intro.ogg" id="2_vnyht"]
+[ext_resource type="AudioStream" uid="uid://dhyfw3x07v3ii" path="res://assets/audio/music/Factory - Planning.ogg" id="3_o5jr7"]
+[ext_resource type="AudioStream" uid="uid://wisujtxdkiqp" path="res://assets/audio/music/Factory - Combined.ogg" id="4_nqnhx"]
+[ext_resource type="AudioStream" uid="uid://b4vx3nq77t7e0" path="res://assets/audio/music/Factory - Win.ogg" id="5_tsj6b"]
+[ext_resource type="AudioStream" uid="uid://dabccmypw8ewi" path="res://assets/audio/music/Factory - Lose.ogg" id="6_1i1ll"]
+[ext_resource type="Script" uid="uid://d255oldefpqg4" path="res://music_player.gd" id="7_ebnul"]
+[ext_resource type="AudioStream" uid="uid://d0icnucxscyri" path="res://assets/audio/sfx/SFX - Buy.ogg" id="7_vnyht"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_o5jr7"]
+stream_count = 1
+stream_0/stream = ExtResource("7_vnyht")
+stream_0/volume = -60.0
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_g4v7s"]
+clip_count = 7
+clip_0/name = &"Title"
+clip_0/stream = ExtResource("1_nqnhx")
+clip_0/auto_advance = 0
+clip_1/name = &"Intro"
+clip_1/stream = ExtResource("2_vnyht")
+clip_1/auto_advance = 0
+clip_2/name = &"Planning"
+clip_2/stream = ExtResource("3_o5jr7")
+clip_2/auto_advance = 0
+clip_3/name = &"Action"
+clip_3/stream = ExtResource("4_nqnhx")
+clip_3/auto_advance = 0
+clip_4/name = &"Lose"
+clip_4/stream = ExtResource("6_1i1ll")
+clip_4/auto_advance = 1
+clip_4/next_clip = 0
+clip_5/name = &"Win"
+clip_5/stream = ExtResource("5_tsj6b")
+clip_5/auto_advance = 1
+clip_5/next_clip = 0
+clip_6/name = &"Silence"
+clip_6/stream = SubResource("AudioStreamSynchronized_o5jr7")
+clip_6/auto_advance = 0
+_transitions = {
+Vector2i(0, 1): {
+"fade_beats": 4.0,
+"fade_mode": 2,
+"filler_clip": 6,
+"from_time": 2,
+"to_time": 1,
+"use_filler_clip": true
+},
+Vector2i(1, 2): {
+"fade_beats": 2.0,
+"fade_mode": 2,
+"from_time": 2,
+"to_time": 1
+},
+Vector2i(2, 3): {
+"fade_beats": 2.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(3, 4): {
+"fade_beats": 1.5,
+"fade_mode": 4,
+"filler_clip": 6,
+"from_time": 0,
+"to_time": 1,
+"use_filler_clip": true
+},
+Vector2i(3, 5): {
+"fade_beats": 1.5,
+"fade_mode": 4,
+"filler_clip": 6,
+"from_time": 0,
+"to_time": 1,
+"use_filler_clip": true
+},
+Vector2i(4, 0): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 3,
+"to_time": 1
+},
+Vector2i(5, 0): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 3,
+"to_time": 1
+}
+}
+
+[node name="MusicPlayer" type="AudioStreamPlayer" unique_id=1763511428]
+stream = SubResource("AudioStreamInteractive_g4v7s")
+autoplay = true
+bus = &"Music"
+playback_type = 1
+script = ExtResource("7_ebnul")
