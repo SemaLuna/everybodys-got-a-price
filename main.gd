@@ -18,10 +18,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (is_game_started):
 		$HUD.update_score_banner(price_units_sold)
+		$HUD.update_countdown_display($Countdown.time_left)
+		$EndScore.update_final_score(price_units_sold)
 
 func on_increase_score():
 	price_units_sold += 1
 	$HUD.update_score_banner(price_units_sold)
+
+func _on_countdown_timeout() -> void:
+	quit_game()
 
 func reset_game_state() -> void:
 	emit_signal("title")
@@ -39,6 +44,8 @@ func start_game() -> void:
 	is_game_started = true
 	show_ui($HUD)
 	$PlanningPhase.show()
+	$Countdown.set_paused(false)
+	$Countdown.start()
 	
 func handle_pause() -> void:
 	if (!is_game_started): pass
@@ -53,13 +60,18 @@ func pause_game() -> void:
 	# TODO make sure all the other logic pauses (e.g. timers)
 	$PauseMenu.show()
 	get_tree().call_group("Animations", "pause")
+	$Countdown.set_paused(true)
 
 func unpause_game() -> void:
 	# TODO make sure all other logic restarts (e.g. timers) when unpausing
 	$PauseMenu.hide()
 	get_tree().call_group("Animations", "play")
+	$Countdown.set_paused(false)
 
 func quit_game() -> void:
+	$EndScore.show()
+	await get_tree().create_timer(5.0).timeout
+	$EndScore.hide()
 	reset_game_state()
 	
 # Hides every other uiItem - use carefully, if you want to display multiple UI scenes at once

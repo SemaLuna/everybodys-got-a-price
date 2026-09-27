@@ -6,9 +6,14 @@ signal rotation_updated
 
 @export var conveyor_scene : PackedScene
 @export var stretch_machine_scene : PackedScene
-@onready var buttons = [$ConveyorButton, $TrashButton, $StretchMachineButton, $ConveyorTurnRightButton, $ConveyorTurnLeftButton, $Rotate90Button]
+@export var stretch_machine_red_scene : PackedScene
+@export var stretch_machine_yellow_scene : PackedScene
+@onready var buttons = [$ConveyorButton, $TrashButton, $StretchMachineButton, $StretchMachineRedButton, $StretchMachineYellowButton, $ConveyorTurnRightButton, $ConveyorTurnLeftButton, $Rotate90Button]
 var is_building = false
 var build_rotation = 0
+
+func update_countdown_display(timeleft):
+	$Countdown.text = str(int(round(timeleft)))
 
 func _on_pause_button_pressed() -> void:
 	pause_game.emit()
@@ -47,6 +52,16 @@ func _on_stretch_machine_button_pressed() -> void:
 	update_build_state($StretchMachineButton)
 	var scene = stretch_machine_scene if is_building else null
 	build_mode.emit(is_building, scene, null)
+	
+func _on_stretch_machine_red_button_pressed() -> void:
+	update_build_state($StretchMachineRedButton)
+	var scene = stretch_machine_red_scene if is_building else null
+	build_mode.emit(is_building, scene, null)
+	
+func _on_stretch_machine_yellow_button_pressed() -> void:
+	update_build_state($StretchMachineYellowButton)
+	var scene = stretch_machine_yellow_scene if is_building else null
+	build_mode.emit(is_building, scene, null)
 
 func update_build_state(button: BaseButton) -> void:
 	var currently_active_button = button.is_toggle_mode()
@@ -69,5 +84,5 @@ func _on_rotate_90_button_pressed() -> void:
 	build_rotation += PI/2
 	rotation_updated.emit(build_rotation)
 	for button in buttons:
-		if (button != $Rotate90Button):
+		if (button != $Rotate90Button) && (button != $TrashButton):
 			button.rotation = build_rotation

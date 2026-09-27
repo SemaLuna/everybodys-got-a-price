@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://88dad6iwyttb" path="res://assets/free-industrial-tileset/1-tiles/atlas.png" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://csd31gpptv3ct" path="res://ui/main_menu.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dl632clw4jg3t" path="res://ui/pause_menu.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://1rqykgp6sc74" path="res://ui/end_score.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://2ok7dwr13r6m" path="res://ui/planning_phase.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dwh8uamg8w6wb" path="res://music_player.tscn" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://ukv6ioqx43xl" path="res://sfx_player.gd" id="8_kek77"]
@@ -116,7 +117,14 @@ visible = false
 [node name="PauseMenu" parent="." unique_id=1083180113 instance=ExtResource("4_1bvp3")]
 visible = false
 
+[node name="EndScore" parent="." unique_id=491036651 instance=ExtResource("5_272bh")]
+visible = false
+
 [node name="Timer" type="Timer" parent="." unique_id=2009036978]
+
+[node name="Countdown" type="Timer" parent="." unique_id=845102945]
+wait_time = 60.0
+one_shot = true
 
 [node name="PlanningPhase" parent="." unique_id=222239368 instance=ExtResource("5_lquwl")]
 
@@ -135,3 +143,4 @@ script = ExtResource("8_kek77")
 [connection signal="quit_game" from="PauseMenu" to="." method="quit_game"]
 [connection signal="resume_game" from="PauseMenu" to="." method="handle_pause"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]
