@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8d8a3tlx5huc"
+path="res://.godot/imported/SFX - Inquisitive 2.wav-8a163c2b3cbac07b14c21e69b76c495d.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/price/SFX - Inquisitive 2.wav"
+dest_files=["res://.godot/imported/SFX - Inquisitive 2.wav-8a163c2b3cbac07b14c21e69b76c495d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

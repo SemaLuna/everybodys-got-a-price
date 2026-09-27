@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dhyfw3x07v3ii"
+path="res://.godot/imported/Factory - Planning.ogg-681e3b7aea5aeedaa7bd72365cf32295.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Factory - Planning.ogg"
+dest_files=["res://.godot/imported/Factory - Planning.ogg-681e3b7aea5aeedaa7bd72365cf32295.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=96.0
+beat_count=0
+bar_beats=4

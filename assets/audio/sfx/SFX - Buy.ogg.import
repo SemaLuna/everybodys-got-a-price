@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d0icnucxscyri"
+path="res://.godot/imported/SFX - Buy.ogg-73c6b51e3d37b29cf9ae6ffd00893de4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX - Buy.ogg"
+dest_files=["res://.godot/imported/SFX - Buy.ogg-73c6b51e3d37b29cf9ae6ffd00893de4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

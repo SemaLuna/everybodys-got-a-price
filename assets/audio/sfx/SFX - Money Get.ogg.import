@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://desuieoyomqu"
+path="res://.godot/imported/SFX - Money Get.ogg-2b971b6730cb2b5abe6e14acc079171b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX - Money Get.ogg"
+dest_files=["res://.godot/imported/SFX - Money Get.ogg-2b971b6730cb2b5abe6e14acc079171b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

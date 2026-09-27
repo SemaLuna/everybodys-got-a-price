@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dwtcsu6inl00g"
+path="res://.godot/imported/Factory - Action.ogg-858462083baabd748dc2579bc9276a19.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Factory - Action.ogg"
+dest_files=["res://.godot/imported/Factory - Action.ogg-858462083baabd748dc2579bc9276a19.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=96.0
+beat_count=0
+bar_beats=4

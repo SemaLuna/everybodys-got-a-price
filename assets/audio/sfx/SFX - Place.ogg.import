@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://clwb7c5hd7dbw"
+path="res://.godot/imported/SFX - Place.ogg-1d56c96b941114ef3ac39e267865dbbd.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX - Place.ogg"
+dest_files=["res://.godot/imported/SFX - Place.ogg-1d56c96b941114ef3ac39e267865dbbd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

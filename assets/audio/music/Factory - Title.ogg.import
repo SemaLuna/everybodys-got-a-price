@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dcjvnh7m5vw87"
+path="res://.godot/imported/Factory - Title.ogg-f1a18580307fb62a71984e28cb17c770.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Factory - Title.ogg"
+dest_files=["res://.godot/imported/Factory - Title.ogg-f1a18580307fb62a71984e28cb17c770.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=80.0
+beat_count=0
+bar_beats=4
