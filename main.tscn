@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dlbtyk26gjp58" path="res://ui/hud.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://csd31gpptv3ct" path="res://ui/main_menu.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dl632clw4jg3t" path="res://ui/pause_menu.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://2ok7dwr13r6m" path="res://scene/planning.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://2ok7dwr13r6m" path="res://scene/planning_phase.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://26y05ms0sofe" path="res://scene/conveyor.tscn" id="6_7mycd"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_272bh"]
@@ -27,7 +27,6 @@ visible = false
 [node name="Timer" type="Timer" parent="." unique_id=2009036978]
 
 [node name="PlanningPhase" parent="." unique_id=222239368 instance=ExtResource("5_lquwl")]
-position = Vector2(320, 192)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=559005502]
 position = Vector2(40, -520)

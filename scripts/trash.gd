@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var item_holder = $ItemHolder
-signal increase_score
+signal item_delivered
 
 func can_receive_item():
 	return item_holder.get_child_count() == 0
@@ -12,4 +12,4 @@ func receive_item(item: Node2D):
 func _on_item_holder_item_ready():
 	var item = item_holder.offload_item()
 	item.queue_free()
-	increase_score.emit()
+	item_delivered.emit()

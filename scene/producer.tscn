@@ -401,7 +401,7 @@ autostart = true
 [node name="Detector" parent="." unique_id=873267539 instance=ExtResource("2_ius02")]
 position = Vector2(60.6, 0)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1175320286]
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1175320286]
 z_index = 2
 rotation = 6.2831855
 scale = Vector2(2, 2)

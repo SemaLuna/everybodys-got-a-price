@@ -14,7 +14,7 @@ script = ExtResource("1_tmcpm")
 shape = SubResource("RectangleShape2D_dfegk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=929262745]
-scale = Vector2(2, 2)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_bnwpc")
 
 [node name="ItemHolder" parent="." unique_id=1173343974 instance=ExtResource("3_dltdn")]
