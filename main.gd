@@ -9,7 +9,7 @@ var price_units_sold = 0
 func _ready() -> void:
 	uiItems = [$MainMenu, $PauseMenu, $HUD]
 	reset_game_state()
-	$PlanningPhase/Trash.connect("increase_score", on_increase_score)
+	$PlanningPhase.trashInstance.connect("item_delivered", on_increase_score)
 
 func _process(delta: float) -> void:
 	if (is_game_started):
@@ -25,12 +25,14 @@ func reset_game_state() -> void:
 	is_game_paused = false
 	price_units_sold = 0
 	show_ui($MainMenu)
+	$PlanningPhase.hide()
 	var menu = $MainMenu
 	menu.custom_function()
 
 func start_game() -> void:
 	is_game_started = true
 	show_ui($HUD)
+	$PlanningPhase.show()
 	
 func handle_pause() -> void:
 	if (!is_game_started): pass
@@ -44,10 +46,12 @@ func handle_pause() -> void:
 func pause_game() -> void:
 	# TODO make sure all the other logic pauses (e.g. timers)
 	$PauseMenu.show()
+	$PlanningPhase.stop_animation()
 
 func unpause_game() -> void:
 	# TODO make sure all other logic restarts (e.g. timers) when unpausing
 	$PauseMenu.hide()
+	$PlanningPhase.start_animation()
 
 func quit_game() -> void:
 	reset_game_state()
