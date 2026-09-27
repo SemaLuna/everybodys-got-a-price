@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://fs0owjw1spnh"
+path="res://.godot/imported/SFX - UIMove.ogg-eb7291c623b2b89b952dfee1274b4051.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX - UIMove.ogg"
+dest_files=["res://.godot/imported/SFX - UIMove.ogg-eb7291c623b2b89b952dfee1274b4051.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
