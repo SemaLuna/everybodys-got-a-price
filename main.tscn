@@ -116,6 +116,10 @@ visible = false
 
 [node name="Timer" type="Timer" parent="." unique_id=2009036978]
 
+[node name="Countdown" type="Timer" parent="." unique_id=845102945]
+wait_time = 60.0
+one_shot = true
+
 [node name="PlanningPhase" parent="." unique_id=222239368 instance=ExtResource("5_lquwl")]
 
 [connection signal="build_mode" from="HUD" to="PlanningPhase" method="build_mode"]
@@ -125,3 +129,4 @@ visible = false
 [connection signal="quit_game" from="PauseMenu" to="." method="quit_game"]
 [connection signal="resume_game" from="PauseMenu" to="." method="handle_pause"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]
