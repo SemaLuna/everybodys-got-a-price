@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cqquh44fkwkcy"]
 
+[ext_resource type="Texture2D" uid="uid://xv4tu3c5s66k" path="res://assets/custom/icons/rotate.png" id="1_giv2h"]
+
 [node name="Rotate90Button" type="Button" unique_id=1150181788]
-offset_right = 64.0
-offset_bottom = 48.0
-text = "Rotate"
+offset_right = 40.0
+offset_bottom = 40.0
+icon = ExtResource("1_giv2h")
