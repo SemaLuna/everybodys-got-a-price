@@ -46,7 +46,7 @@ func handle_pause() -> void:
 func pause_game() -> void:
 	# TODO make sure all the other logic pauses (e.g. timers)
 	$PauseMenu.show()
-	get_tree().call_group("Animations", "stop")
+	get_tree().call_group("Animations", "pause")
 
 func unpause_game() -> void:
 	# TODO make sure all other logic restarts (e.g. timers) when unpausing
