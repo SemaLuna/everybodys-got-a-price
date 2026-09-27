@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://drepkqatb6cd2"]
+
+[ext_resource type="Texture2D" uid="uid://bemveqdmvn3vp" path="res://assets/test-sprites/tilesets/conveyor belt 21x21.png" id="1_o44b6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o44b6"]
+atlas = ExtResource("1_o44b6")
+region = Rect2(21, 84, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w780"]
+atlas = ExtResource("1_o44b6")
+region = Rect2(42, 84, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qsmj"]
+atlas = ExtResource("1_o44b6")
+region = Rect2(63, 84, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajnis"]
+atlas = ExtResource("1_o44b6")
+region = Rect2(84, 84, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8toka"]
+atlas = ExtResource("1_o44b6")
+region = Rect2(105, 84, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl2k1"]
+atlas = ExtResource("1_o44b6")
+region = Rect2(126, 84, 21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pw6jo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o44b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w780")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qsmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajnis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8toka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl2k1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ConveyorTurnRightButton" type="Button" unique_id=1638303112]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=355431299 groups=["Animations"]]
+position = Vector2(32, 32)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pw6jo")
+autoplay = "default"
+frame = 1
+frame_progress = 0.83836997
+metadata/_edit_group_ = true

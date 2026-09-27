@@ -32,6 +32,54 @@ region = Rect2(105, 231, 21, 21)
 atlas = ExtResource("1_ktqbe")
 region = Rect2(126, 231, 21, 21)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_o31ag"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(21, 84, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6sn6"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(42, 84, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yshyo"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(63, 84, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv1s5"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(84, 84, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5ci7"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(105, 84, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86m52"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(126, 84, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbpir"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(21, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoloq"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(42, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol5vm"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(63, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shn0i"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(84, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xa68"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(105, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22gje"]
+atlas = ExtResource("1_ktqbe")
+region = Rect2(126, 21, 21, 21)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_dfegk"]
 animations = [{
 "frames": [{
@@ -56,6 +104,52 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o31ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6sn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yshyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv1s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5ci7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86m52")
+}],
+"loop": 1,
+"name": &"turn-left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbpir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoloq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol5vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shn0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xa68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22gje")
+}],
+"loop": 1,
+"name": &"turn-right",
+"speed": 5.0
 }]
 
 [node name="Conveyor" type="Area2D" unique_id=1667239738]
@@ -71,6 +165,7 @@ metadata/_edit_group_ = true
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_dfegk")
 autoplay = "default"
+frame_progress = 0.4547553
 metadata/_edit_group_ = true
 
 [node name="Detector" parent="." unique_id=873267539 instance=ExtResource("3_k415x")]
