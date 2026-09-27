@@ -6,6 +6,10 @@ var is_game_paused = false
 var is_game_started = false
 var price_units_sold = 0
 
+# Signals for music
+signal title
+signal intro
+
 func _ready() -> void:
 	uiItems = [$MainMenu, $PauseMenu, $HUD]
 	reset_game_state()
@@ -20,7 +24,7 @@ func on_increase_score():
 	$HUD.update_score_banner(price_units_sold)
 
 func reset_game_state() -> void:
-	# TODO Start background title music
+	emit_signal("title")
 	is_game_started = false
 	is_game_paused = false
 	price_units_sold = 0
@@ -31,6 +35,7 @@ func reset_game_state() -> void:
 	menu.reset_main_menu()
 
 func start_game() -> void:
+	emit_signal("intro")
 	is_game_started = true
 	show_ui($HUD)
 	$PlanningPhase.show()
