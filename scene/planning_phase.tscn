@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://2ok7dwr13r6m"]
+[gd_scene format=3 uid="uid://dnkutbou2x8f1"]
 
 [ext_resource type="Script" uid="uid://cfpvxeve8hqyv" path="res://scene/planning_phase.gd" id="1_r32hj"]
 [ext_resource type="PackedScene" uid="uid://vdl48k7220cp" path="res://scene/producer.tscn" id="2_phd41"]
