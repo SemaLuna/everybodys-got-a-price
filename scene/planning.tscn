@@ -14,9 +14,12 @@ position = Vector2(232, -32)
 
 [node name="Conveyor" parent="." unique_id=1667239738 instance=ExtResource("1_w2ni8")]
 position = Vector2(32, -32)
+metadata/_edit_group_ = true
 
 [node name="Conveyor2" parent="." unique_id=1646736851 instance=ExtResource("1_w2ni8")]
 position = Vector2(96, -32)
+metadata/_edit_group_ = true
 
 [node name="Conveyor3" parent="." unique_id=1909036483 instance=ExtResource("1_w2ni8")]
 position = Vector2(160, -32)
+metadata/_edit_group_ = true
