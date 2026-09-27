@@ -17,6 +17,6 @@ shape = SubResource("RectangleShape2D_dfegk")
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_bnwpc")
 
-[node name="ItemHolder" parent="." unique_id=1173343974 instance=ExtResource("3_dltdn")]
+[node name="ItemHolder" parent="." unique_id=1173343974 groups=["Animations"] instance=ExtResource("3_dltdn")]
 
 [connection signal="item_ready" from="ItemHolder" to="." method="_on_item_holder_item_ready"]

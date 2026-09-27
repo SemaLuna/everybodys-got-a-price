@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://vdl48k7220cp" path="res://ui/planning_phase/producer.tscn" id="2_phd41"]
 [ext_resource type="PackedScene" uid="uid://bfmlsm3rk6363" path="res://ui/planning_phase/trash.tscn" id="3_2xhhf"]
 [ext_resource type="PackedScene" uid="uid://5ds8r0upd1id" path="res://grid_cell.tscn" id="4_phd41"]
-[ext_resource type="Texture2D" uid="uid://88dad6iwyttb" path="res://assets/Free Industrial Zone Tileset/1 Tiles/atlas.png" id="5_r32hj"]
+[ext_resource type="Texture2D" uid="uid://88dad6iwyttb" path="res://assets/free-industrial-tileset/1-tiles/atlas.png" id="5_r32hj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_06t25"]
 texture = ExtResource("5_r32hj")

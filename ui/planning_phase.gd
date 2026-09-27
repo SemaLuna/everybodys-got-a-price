@@ -21,7 +21,7 @@ func build_mode(is_active: bool, building) -> void:
 func populate_grid() -> void:
 	var container = $GridContainer
 	container.columns = MAX_COLUMNS
-	if not grid_cell || not producer || not trash: pass
+	if not grid_cell || not producer || not trash: return
 	
 	for i in range(MAX_COLUMNS*ROWS):
 		var new_cell : BaseButton = grid_cell.instantiate()

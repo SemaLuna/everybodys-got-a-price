@@ -413,7 +413,7 @@ frame = 1
 frame_progress = 0.2332139
 flip_h = true
 
-[node name="ItemHolder" parent="." unique_id=1173343974 instance=ExtResource("4_ius02")]
+[node name="ItemHolder" parent="." unique_id=1173343974 groups=["Animations"] instance=ExtResource("4_ius02")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="belt_detected" from="Detector" to="." method="_on_detector_belt_detected"]
