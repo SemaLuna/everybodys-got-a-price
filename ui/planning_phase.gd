@@ -10,12 +10,14 @@ var ROWS = 7 #Not configured directly, but expected based on container size
 var producerInstance = null
 var trashInstance = null
 var building_scene: PackedScene
+var direction = null
 
 func _ready() -> void:
 	populate_grid()
 
-func build_mode(is_active: bool, building) -> void:
+func build_mode(is_active: bool, building, turn) -> void:
 	building_scene = building if is_active else null
+	direction = turn
 	toggle_cells(is_active)
 
 func populate_grid() -> void:
@@ -56,5 +58,10 @@ func on_cell_pressed(cell: BaseButton) -> void:
 	if building_scene != null:
 		var machine_instance = building_scene.instantiate()
 		cell.add_child(machine_instance)
+		if direction != null:
+			if direction == "turn-right":
+				machine_instance.set_direction(direction)
+			if direction == "turn-left":
+				machine_instance.set_direction(direction)
 		machine_instance.translate(halfCell)
 		

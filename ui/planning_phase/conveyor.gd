@@ -2,15 +2,22 @@ extends Area2D
 
 @onready var item_holder = $ItemHolder
 @onready var detector = $Detector
+@onready var animatedSprite = $AnimatedSprite2D
 
-func set_direction():
+func start_direction():
 	## Requires thorough implementation for now it will simple receive from left deposit right
 	## the default detector position is centered on the conveyor, we will need to point it towards the next conveyor
-	detector.position = Vector2.RIGHT * 64 
+	detector.position = Vector2.RIGHT * 64
+	animatedSprite.play("default") 
+		
 	
 # Sets the direction for the conveyor at the very start
 func _ready():
-	set_direction()
+	start_direction()
+	
+func set_direction(direction):
+	if direction != null:
+		animatedSprite.play(direction)
 	
 func can_receive_item():
 	return item_holder.get_child_count() == 0
