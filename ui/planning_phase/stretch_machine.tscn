@@ -252,9 +252,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0o60v")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"processing",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [node name="StretchMachine" type="Area2D" unique_id=1667239738]
@@ -276,8 +276,8 @@ metadata/_edit_group_ = true
 
 [node name="ItemHolder" parent="." unique_id=1173343974 groups=["Animations"] instance=ExtResource("4_cjhqo")]
 script = ExtResource("6_hmplx")
-processing_time = null
 metadata/_edit_group_ = true
 
+[connection signal="animation_finished" from="Animation" to="ItemHolder" method="_on_animation_animation_finished"]
 [connection signal="belt_detected" from="Detector" to="." method="_on_detector_belt_detected"]
 [connection signal="item_ready" from="ItemHolder" to="." method="_on_item_holder_item_ready"]

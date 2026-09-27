@@ -1,17 +1,27 @@
 extends "res://ui/planning_phase/item_holder.gd"
 
-var number_of_frames = 33
-@export var processing_time: float = number_of_frames / 5.0
+# References
+# var number_of_frames = 33
+# var frames_per_second = 5
+var move_vector: Vector2 = Vector2(64.0, 0.0) # Move fully across the machine
 
 # Overridden from parent
 func receive_item(item: Node2D):
 	super(item)
-	item.hide()
-
-# Overridden from parent
-func handle_item(_unused):
-	var animation = self.get_parent().find_child('Animation') as AnimatedSprite2D
+	var animation = get_parent().find_child('Animation') as AnimatedSprite2D
 	animation.play('processing')
-	await get_tree().create_timer(processing_time).timeout
-	animation.stop()
+	item.hide()
+	
+# Overridden from parent
+func offload_item():
+	var item = get_child(0)
+	return item
+
+# Overridden parent behaviour
+func _physics_process(delta):
+	pass
+
+func _on_animation_animation_finished() -> void:
+	var item = get_child(0)
+	item.position = position + move_vector
 	hold_item()

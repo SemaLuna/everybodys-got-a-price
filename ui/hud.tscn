@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bhq5pm2dft4l3" path="res://ui/hud/score_banner.tscn" id="2_276te"]
 [ext_resource type="PackedScene" uid="uid://bvqw8ewota4c6" path="res://ui/planning_phase/stretch_machine.tscn" id="3_srpbi"]
 [ext_resource type="PackedScene" uid="uid://26y05ms0sofe" path="res://ui/planning_phase/conveyor.tscn" id="4_1v5rv"]
-[ext_resource type="Texture2D" uid="uid://88dad6iwyttb" path="res://assets/Free Industrial Zone Tileset/1 Tiles/atlas.png" id="4_7ihmi"]
+[ext_resource type="Texture2D" uid="uid://88dad6iwyttb" path="res://assets/free-industrial-tileset/1-tiles/atlas.png" id="4_7ihmi"]
 [ext_resource type="PackedScene" uid="uid://s4uewsnnvfcm" path="res://ui/hud/conveyor_button.tscn" id="4_en2x2"]
 [ext_resource type="PackedScene" uid="uid://37py3jvht7of" path="res://ui/hud/trash_button.tscn" id="6_1v5rv"]
 [ext_resource type="PackedScene" uid="uid://c4mpxdgsntrus" path="res://ui/hud/stretch_machine_button.tscn" id="7_q43x7"]

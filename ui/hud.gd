@@ -5,7 +5,7 @@ signal build_mode
 
 @export var conveyor_scene : PackedScene
 @export var stretch_machine_scene : PackedScene
-@onready var buttons = [$ConveyorButton, $TrashButton]
+@onready var buttons = [$ConveyorButton, $TrashButton, $StretchMachineButton]
 var is_building = false
 
 func _on_pause_button_pressed() -> void:
